@@ -1,0 +1,67 @@
+
+#enterWord {
+  margin-bottom: 10px;
+}
+
+.submittedWord {
+  margin: 10px;
+  border-bottom: solid 4px purple;
+  height:50px;
+  width: 50px;
+  float:left;
+}
+
+.the-word {
+  height: 50px;
+}
+
+#letter-btn {
+  margin: 5px;
+  height: 50px;
+  width: 50px;
+  float: left;
+}
+
+.group-of-buttons {
+  margin-top: 30px;
+
+}
+
+.svg {
+  background-color: #fff;
+}
+
+.title {
+  font-family: 'Petit Formal Script', cursive;
+  color: purple;
+  text-align: center;
+}
+
+/*.label{
+  font-family: 'Quicksand', sans-serif;
+  color: #FF66CC!important;
+  font-size: 14px!important;
+}*/
+
+.form-control{
+  font-family: 'Quicksand', sans-serif;
+}
+
+.btn {
+  font-family: 'Quicksand', sans-serif;
+}
+
+#guesses {
+  font-family: 'Quicksand', sans-serif;
+  color: black;
+  position: absolute;
+  float: right;
+  margin-right: 100px;
+  top: 0;
+  right: 0;
+}
+
+.header {
+  float:left;
+  position: absolute;
+}

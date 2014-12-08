@@ -1,0 +1,57 @@
+<div ng-controller="IndexCtrl">
+
+<div class="container">
+  <h1 class="title"> Hangman-The Game </h1>
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <form ng-submit="saveWord(word)" class="form-group">
+        <input type="text" ng-model="word" id="enterWord" class="form-control" placeholder="Enter a word or phrase">
+       <button class="btn btn-info">Save</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6">
+      <svg height="500" width="500" class="svg">
+        <polyline points="250,100 250,50 50,50 50,450 350,450" z-index="1" style="fill:none; stroke:purple; stroke-width: 10" />
+        <circle cx="250" cy="141" r="40" z-index="2" style="fill:none; stroke:purple; stroke-width: 3"/>
+        <polyline points="250,180 221,340" style="fill:none; stroke:purple; stroke-width: 5" />
+        <polyline points="243,215 190,190" style="fill:none; stroke:purple; stroke-width: 3" />
+        <polyline points="243,215 300,190" style="fill:none; stroke:purple; stroke-width: 3" />
+        <polyline points="223,337 150,400" style="fill:none; stroke:purple; stroke-width: 3" />
+        <polyline points="223,338 300,400" style="fill:none; stroke:purple; stroke-width: 3" />
+      </svg>
+    </div>
+
+    <!-- <div class="phrase-container">
+        <div class="phrase-word" ng-repeat="i in input track by $index" >
+          <div class="phrase" ng-repeat="j in i track by $index">{{j}}</div>
+        </div>
+      </div> -->
+
+    <div class="col-xs-5">
+      <div class="the-word">
+        <h1 ng-show="correct" ng-repeat="character in words[0] track by $index" class="submittedWord">{{ character }}</h1><br>
+      </div>
+
+      <div ng-repeat="letter in letters" class="group-of-buttons">
+        <button ng-model="letter" ng-click="playerEntry(letter)" id="letter-btn" class="btn btn-info">{{ letter }}</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!--  <p>I have {{ favoriteMovies.length }} favorite
+        <ng-pluralize count="favoriteMovies.length" when="{'1' : 'movie', other: 'movies'}"></ng-pluralize>
+      </p> -->
+
+  <div class="row" id="guesses">
+    <h5>You've made: {{ guesses.length }} guesses</h5>
+    <p>Guessed letters: <span ng-repeat="guess in guesses"> {{ guess }} </span> </p>
+    <p>Correct guesses: {{ point }}</p>
+  </div>
+
+</div>
+
+</div>
