@@ -15,24 +15,20 @@
     <div class="col-xs-6">
       <svg height="500" width="500" class="svg">
         <polyline points="250,100 250,50 50,50 50,450 350,450" z-index="1" style="fill:none; stroke:purple; stroke-width: 10" />
-        <circle cx="250" cy="141" r="40" z-index="2" style="fill:none; stroke:purple; stroke-width: 3"/>
-        <polyline points="250,180 221,340" style="fill:none; stroke:purple; stroke-width: 5" />
-        <polyline points="243,215 190,190" style="fill:none; stroke:purple; stroke-width: 3" />
-        <polyline points="243,215 300,190" style="fill:none; stroke:purple; stroke-width: 3" />
-        <polyline points="223,337 150,400" style="fill:none; stroke:purple; stroke-width: 3" />
-        <polyline points="223,338 300,400" style="fill:none; stroke:purple; stroke-width: 3" />
+
+        <circle cx="250" cy="141" r="40" z-index="2" style="fill:none; stroke:purple; stroke-width: 3" ng-show="revealImage(1)"/>
+        <polyline points="250,180 221,340" style="fill:none; stroke:purple; stroke-width: 5" ng-show=" revealImage(2)"/>
+        <polyline points="243,215 190,190" style="fill:none; stroke:purple; stroke-width: 3" ng-show=" revealImage(3)"/>
+        <polyline points="243,215 300,190" style="fill:none; stroke:purple; stroke-width: 3" ng-show=" revealImage(4)"/>
+        <polyline points="223,337 150,400" style="fill:none; stroke:purple; stroke-width: 3" ng-show=" revealImage(5)"/>
+        <polyline points="223,338 300,400" style="fill:none; stroke:purple; stroke-width: 3" ng-show="revealImage(6)"/>
+
       </svg>
     </div>
 
-    <!-- <div class="phrase-container">
-        <div class="phrase-word" ng-repeat="i in input track by $index" >
-          <div class="phrase" ng-repeat="j in i track by $index">{{j}}</div>
-        </div>
-      </div> -->
-
     <div class="col-xs-5">
       <div class="the-word">
-        <h1 ng-show="correct" ng-repeat="character in words[0] track by $index" class="submittedWord">{{ character }}</h1><br>
+        <h1 ng-repeat="character in words[0] track by $index" class="submittedWord">{{ revealLetter(character) }}</h1><br>
       </div>
 
       <div ng-repeat="letter in letters" class="group-of-buttons">
@@ -42,12 +38,8 @@
 
   </div>
 
-  <!--  <p>I have {{ favoriteMovies.length }} favorite
-        <ng-pluralize count="favoriteMovies.length" when="{'1' : 'movie', other: 'movies'}"></ng-pluralize>
-      </p> -->
-
   <div class="row" id="guesses">
-    <h5>You've made: {{ guesses.length }} guesses</h5>
+    <h5>You've made: {{ guesses.length }}<ng-pluralize count="guesses.length" when="{'1' : ' guess', other: ' guesses'}"></ng-pluralize></h5>
     <p>Guessed letters: <span ng-repeat="guess in guesses"> {{ guess }} </span> </p>
     <p>Correct guesses: {{ point }}</p>
   </div>
