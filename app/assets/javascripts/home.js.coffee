@@ -1,3 +1,4 @@
+#attempted coffeescript, this is all commented out and only the home.js works
 # #define my app
 # app = angular.module "hangman", []
 
